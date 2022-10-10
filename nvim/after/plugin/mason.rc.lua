@@ -6,8 +6,9 @@ if (not status2) then return end
 mason.setup {}
 
 lspconfig.setup {
-  ensure_installed = { 'sumneko_lua', 'tailwindcss' }
+  ensure_installed = { 'sumneko_lua', 'tailwindcss', 'pyright' }
 }
 
 local nvim_lsp = require('lspconfig')
 nvim_lsp.tailwindcss.setup {}
+nvim_lsp.pyright.setup {}
