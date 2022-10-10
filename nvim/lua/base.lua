@@ -40,6 +40,13 @@ vim.opt.backspace = 'start,eol,indent'
 vim.opt.path:append { '**' } -- finding files - search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
 
+-- Auto-reload files when modified externally
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+  command = "if mode() != 'c' | checktime | endif",
+  pattern = { "*" }
+})
+
 -- Undercurl -- doesn't work on iTerm2 for now, leave it for the future
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
