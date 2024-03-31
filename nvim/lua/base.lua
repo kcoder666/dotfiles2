@@ -7,7 +7,7 @@ vim.opt.fileencoding = 'utf-8'
 vim.g.mapleader = ','
 
 vim.wo.number = true -- same as `set number`
-vim.wo.relativenumber = true -- same as `set relativenumber`
+-- vim.wo.relativenumber = true -- same as `set relativenumber`
 
 -- Automatically toggle between line number modes
 vim.api.nvim_command [[augroup NumberToggle]]
